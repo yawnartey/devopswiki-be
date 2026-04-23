@@ -1,0 +1,7 @@
+Phase 1 → FastAPI + PostgreSQL + curated seed data
+Phase 2 → Add crawler (crawl every 24h with a scheduler like APScheduler)
+Phase 3 → Add MeiliSearch for better full-text search
+Phase 4 → Add semantic/AI search
+
+cd /src
+uvicorn main:app --reload  
