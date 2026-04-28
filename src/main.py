@@ -10,7 +10,7 @@ app = FastAPI(title="DevOpsWiki API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost"],
+    allow_origins=["http://localhost:5173", "http://localhost", "http://35.157.173.174"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
