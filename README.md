@@ -31,3 +31,5 @@ src/
 ```
 
 ## Architecture
+
+![Backend Architecture](diagrams/architecture.svg)
