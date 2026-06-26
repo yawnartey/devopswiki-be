@@ -15,7 +15,7 @@ REST API for the DevOpsWiki application, built with FastAPI and PostgreSQL.
 - Python 3.10+
 - PostgreSQL database
 
-## Project Structure
+## Structure
 
 ```
 src/
