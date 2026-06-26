@@ -4,11 +4,11 @@ REST API for the DevOpsWiki application, built with FastAPI and PostgreSQL.
 
 ## Stack
 
-- **FastAPI** — API framework
-- **SQLAlchemy** — ORM
-- **PostgreSQL** — Database
-- **Pydantic** — Data validation
-- **Uvicorn** — ASGI server
+- **FastAPI** - API framework
+- **SQLAlchemy** - ORM
+- **PostgreSQL** - Database
+- **Pydantic** - Data validation
+- **Uvicorn** - ASGI server
 
 ## Prerequisites
 
