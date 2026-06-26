@@ -2,7 +2,7 @@
 
 REST API for the DevOpsWiki application, built with FastAPI and PostgreSQL.
 
-## Tech Stack
+## Stack
 
 - **FastAPI** — API framework
 - **SQLAlchemy** — ORM
@@ -15,17 +15,19 @@ REST API for the DevOpsWiki application, built with FastAPI and PostgreSQL.
 - Python 3.10+
 - PostgreSQL database
 
-## Project Structure
+## Structure
 
+```
 src/
-├── main.py
-├── database.py
-├── models.py
-├── schema.py
-├── seed.py
-├── entrypoint.sh
-├── Dockerfile
+├── main.py              # App entry point — registers router, creates tables
+├── database.py          # SQLAlchemy engine, session factory, Base
+├── models.py            # Resource ORM model
+├── schema.py            # Pydantic schemas for request/response validation
+├── seed.py              # Initial resource data loader
+├── entrypoint.sh        # Container startup script
+├── Dockerfile           # Container image definition
 └── routes/
-└── resources.py
+    └── resources.py     # API route handlers
+```
 
 ## Architecture
