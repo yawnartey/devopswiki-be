@@ -34,6 +34,6 @@ src/
 
 <br>
 
-![Backend Architecture](diagrams/devopswiki-be-4.png)
+![Backend Architecture](diagrams/devopswiki-be-5.png)
 
 <br>
