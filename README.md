@@ -32,4 +32,4 @@ src/
 
 ## Architecture
 
-![Backend Architecture](diagrams/architecture.svg)
+![Backend Architecture](diagrams/devopswiki-be.svg)
