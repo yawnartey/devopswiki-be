@@ -1,7 +1,11 @@
-Phase 1 → FastAPI + PostgreSQL + curated seed data
-Phase 2 → Add crawler (crawl every 24h with a scheduler like APScheduler)
+Phase 1 → FastAPI + Post
+Phase 2 → Add crawler (crawl every 24h with a scheduler like APSchedulegreSQL + curated seed datar)
 Phase 3 → Add MeiliSearch for better full-text search
 Phase 4 → Add semantic/AI search
 
 cd /src
 uvicorn main:app --reload  
+
+[Phase 2]
+- There is a crawler that gets the data from selected websites 
+- There is a scheduler that runs the crawler every 24hrs to get updated records and get them updated into the detabase
