@@ -1,6 +1,7 @@
 import feedparser
 from database import SessionLocal
 from models import Resource
+import re
 
 FEEDS = [
     {"url": "https://devops.com/feed/",                    "source": "devops.com",       "type": "article"},
@@ -31,6 +32,9 @@ TAG_MAP = {
     "devops":         ["devops", "sre", "site reliability"],
 }
 
+def strip_html(text: str) -> str:
+    return re.sub(r'<[^>]+>', '', text).strip()
+
 def assign_tags(title: str, description: str) -> list:
     text = f"{title} {description or ''}".lower()
     tags = set()
@@ -52,7 +56,7 @@ def crawl():
             if db.query(Resource).filter_by(url=url).first():
                 continue
             title       = entry.get("title", "").strip()
-            description = entry.get("summary", "").strip()
+            description = strip_html(entry.get("summary", ""))
             tags        = assign_tags(title, description)
             db.add(Resource(
                 title=title,
