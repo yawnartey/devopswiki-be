@@ -11,8 +11,8 @@ router = APIRouter()
 # Search for a resource
 @router.get("/search", response_model=List[schema.ResourceOut])
 def search_resources(
-    q:   Optional[str] = Query(None),
-    tag: Optional[str] = Query(None),
+    q:   Optional[str] = Query(None, description="Search by keyword. Matches title and description"),
+    tag: Optional[str] = Query(None, description="Filter by tag e.g. docker, kubernetes, terraform"),
     db:  Session = Depends(get_db)
 ):
     query = db.query(models.Resource)
