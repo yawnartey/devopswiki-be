@@ -4,13 +4,23 @@ from models import Resource
 import re
 
 FEEDS = [
-    {"url": "https://devops.com/feed/",                    "source": "devops.com",       "type": "article"},
-    {"url": "https://thenewstack.io/feed/",                "source": "thenewstack.io",   "type": "article"},
-    {"url": "https://www.docker.com/blog/feed/",           "source": "docker-blog",      "type": "article"},
-    {"url": "https://kubernetes.io/feed.xml",              "source": "kubernetes-blog",  "type": "article"},
-    {"url": "https://www.hashicorp.com/blog/feed.xml",     "source": "hashicorp-blog",   "type": "article"},
-    {"url": "https://grafana.com/blog/news/index.xml",     "source": "grafana-blog",     "type": "article"},
-    {"url": "https://www.jenkins.io/blog/rss.xml",         "source": "jenkins-blog",     "type": "article"},
+    {"url": "https://devops.com/feed/",                           "source": "devops.com",          "type": "article"},
+    {"url": "https://thenewstack.io/feed/",                       "source": "thenewstack.io",      "type": "article"},
+    {"url": "https://www.docker.com/blog/feed/",                  "source": "docker-blog",         "type": "article"},
+    {"url": "https://kubernetes.io/feed.xml",                     "source": "kubernetes-blog",     "type": "article"},
+    {"url": "https://www.hashicorp.com/blog/feed.xml",            "source": "hashicorp-blog",      "type": "article"},
+    {"url": "https://grafana.com/blog/news/index.xml",            "source": "grafana-blog",        "type": "article"},
+    {"url": "https://www.jenkins.io/blog/rss.xml",                "source": "jenkins-blog",        "type": "article"},
+    {"url": "https://aws.amazon.com/blogs/devops/feed/",          "source": "aws-devops-blog",     "type": "article"},
+    {"url": "https://aws.amazon.com/blogs/containers/feed/",      "source": "aws-containers-blog", "type": "article"},
+    {"url": "https://www.cncf.io/blog/feed/",                     "source": "cncf-blog",           "type": "article"},
+    {"url": "https://github.blog/feed/",                          "source": "github-blog",         "type": "article"},
+    {"url": "https://about.gitlab.com/blog/feed.xml",             "source": "gitlab-blog",         "type": "article"},
+    {"url": "https://circleci.com/blog/feed.xml",                 "source": "circleci-blog",       "type": "article"},
+    {"url": "https://helm.sh/blog/index.xml",                     "source": "helm-blog",           "type": "article"},
+    {"url": "https://prometheus.io/blog/feed.xml",                "source": "prometheus-blog",     "type": "article"},
+    {"url": "https://www.datadoghq.com/blog/feed/",               "source": "datadog-blog",        "type": "article"},
+    {"url": "https://developers.redhat.com/blog/feed/",           "source": "redhat-developer",    "type": "article"},
 ]
 
 TAG_MAP = {
@@ -30,6 +40,11 @@ TAG_MAP = {
     "automation":     ["automation", "ansible"],
     "aws":            ["aws", "amazon web services", "ec2", "s3", "eks"],
     "devops":         ["devops", "sre", "site reliability"],
+    "helm":           ["helm", "helm chart", "chart"],
+    "gitops":         ["gitops", "git ops", "argocd", "flux"],
+    "security":       ["security", "vulnerability", "cve", "devsecops"],
+    "github":         ["github", "github actions"],
+    "gitlab":         ["gitlab", "gitlab ci"],
 }
 
 def strip_html(text: str) -> str:
